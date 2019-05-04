@@ -1,43 +1,48 @@
 {
-  "name": "hash-obj",
-  "version": "1.0.0",
-  "description": "Get the hash of an object",
-  "license": "MIT",
-  "repository": "sindresorhus/hash-obj",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "hash",
-    "hashing",
-    "crypto",
-    "object",
-    "obj",
-    "plain",
-    "hex",
-    "base64",
-    "md5",
-    "sha1",
-    "sha256",
-    "sha512",
-    "sum"
-  ],
-  "dependencies": {
-    "is-obj": "^1.0.0",
-    "sort-keys": "^1.1.0"
-  },
-  "devDependencies": {
-    "ava": "*"
-  }
+	"name": "hash-obj",
+	"version": "1.0.0",
+	"description": "Get the hash of an object",
+	"license": "MIT",
+	"repository": "sindresorhus/hash-obj",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"hash",
+		"hashing",
+		"crypto",
+		"object",
+		"obj",
+		"plain",
+		"hex",
+		"base64",
+		"md5",
+		"sha1",
+		"sha256",
+		"sha512",
+		"sum"
+	],
+	"dependencies": {
+		"is-obj": "^2.0.0",
+		"sort-keys": "^2.0.0",
+		"type-fest": "^0.4.1"
+	},
+	"devDependencies": {
+		"@types/node": "^12.0.0",
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
 }

@@ -1,23 +1,21 @@
 'use strict';
-var crypto = require('crypto');
-var isObj = require('is-obj');
-var sortKeys = require('sort-keys');
+const crypto = require('crypto');
+const isObject = require('is-obj');
+const sortKeys = require('sort-keys');
 
-module.exports = function (x, opts) {
-	if (!isObj(x)) {
+module.exports = (object, options = {}) => {
+	if (!isObject(object)) {
 		throw new TypeError('Expected an object');
 	}
 
-	opts = opts || {};
+	let encoding = options.encoding || 'hex';
 
-	var enc = opts.encoding || 'hex';
-
-	if (enc === 'buffer') {
-		enc = undefined;
+	if (encoding === 'buffer') {
+		encoding = undefined;
 	}
 
 	return crypto
-		.createHash(opts.algorithm || 'sha512')
-		.update(JSON.stringify(sortKeys(x, {deep: true})), 'utf8')
-		.digest(enc);
+		.createHash(options.algorithm || 'sha512')
+		.update(JSON.stringify(sortKeys(object, {deep: true})), 'utf8')
+		.digest(encoding);
 };
