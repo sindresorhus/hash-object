@@ -24,7 +24,6 @@
 		"hashing",
 		"crypto",
 		"object",
-		"obj",
 		"plain",
 		"hex",
 		"base64",
@@ -36,7 +35,7 @@
 	],
 	"dependencies": {
 		"is-obj": "^2.0.0",
-		"sort-keys": "^2.0.0",
+		"sort-keys": "^3.0.0",
 		"type-fest": "^0.4.1"
 	},
 	"devDependencies": {
