@@ -3,19 +3,17 @@ const crypto = require('crypto');
 const isObject = require('is-obj');
 const sortKeys = require('sort-keys');
 
-module.exports = (object, options = {}) => {
+module.exports = (object, {encoding = 'hex', algorithm = 'sha512'} = {}) => {
 	if (!isObject(object)) {
 		throw new TypeError('Expected an object');
 	}
-
-	let encoding = options.encoding || 'hex';
 
 	if (encoding === 'buffer') {
 		encoding = undefined;
 	}
 
 	return crypto
-		.createHash(options.algorithm || 'sha512')
+		.createHash(algorithm)
 		.update(JSON.stringify(sortKeys(object, {deep: true})), 'utf8')
 		.digest(encoding);
 };
