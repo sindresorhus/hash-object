@@ -41,11 +41,11 @@ hashObject({'🦄': '🌈'}, {algorithm: 'sha1'});
 ```
 */
 declare function hashObject(
-	object: {[key: string]: unknown},
+	object: {[key: string]: any},
 	options: hashObject.BufferOptions
 ): Buffer;
 declare function hashObject(
-	object: {[key: string]: unknown},
+	object: {[key: string]: any},
 	options?: hashObject.Options
 ): string;
 
