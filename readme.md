@@ -22,7 +22,7 @@ hashObject({'🦄': '🌈'}, {algorithm: 'sha1'});
 
 ## API
 
-### hashObject(object, [options])
+### hashObject(object, options?)
 
 #### object
 
@@ -43,7 +43,7 @@ Encoding of the returned hash.
 
 Type: `string`<br>
 Default: `'sha512'`<br>
-Values: `'md5'`, `'sha1'`, `'sha256'`, `'sha512'`, etc *([platform dependent](https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm))*
+Values: `'md5'` `'sha1'` `'sha256'` `'sha512'` etc *([Platform dependent](https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm))*
 
 *Don't use `'md5'` or `'sha1'` for anything sensitive. [They're insecure.](http://googleonlinesecurity.blogspot.no/2014/09/gradually-sunsetting-sha-1.html)*
 
@@ -51,8 +51,3 @@ Values: `'md5'`, `'sha1'`, `'sha256'`, `'sha512'`, etc *([platform dependent](ht
 ## Related
 
 - [hasha](https://github.com/sindresorhus/hasha) - Hashing made simple. Get the hash of a buffer/string/stream/file.
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
