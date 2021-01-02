@@ -1,4 +1,4 @@
-# hash-obj [![Build Status](https://travis-ci.org/sindresorhus/hash-obj.svg?branch=master)](https://travis-ci.org/sindresorhus/hash-obj)
+# hash-obj
 
 > Get the hash of an object
 
