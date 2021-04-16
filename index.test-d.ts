@@ -1,7 +1,7 @@
 import {expectType} from 'tsd';
-import hashObject = require('.');
+import hashObject, {Options} from './index.js';
 
-const options: hashObject.Options = {};
+const options: Options = {};
 
 expectType<string>(hashObject({'🦄': '🌈'}));
 expectType<string>(

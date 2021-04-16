@@ -1,9 +1,8 @@
-'use strict';
-const crypto = require('crypto');
-const isObject = require('is-obj');
-const sortKeys = require('sort-keys');
+import crypto from 'crypto';
+import isObject from 'is-obj';
+import sortKeys from 'sort-keys';
 
-module.exports = (object, {encoding = 'hex', algorithm = 'sha512'} = {}) => {
+export default function hashObject(object, {encoding = 'hex', algorithm = 'sha512'} = {}) {
 	if (!isObject(object)) {
 		throw new TypeError('Expected an object');
 	}
@@ -16,4 +15,4 @@ module.exports = (object, {encoding = 'hex', algorithm = 'sha512'} = {}) => {
 		.createHash(algorithm)
 		.update(JSON.stringify(sortKeys(object, {deep: true})), 'utf8')
 		.digest(encoding);
-};
+}
