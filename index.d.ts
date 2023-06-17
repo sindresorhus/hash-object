@@ -7,7 +7,7 @@ export type Algorithm = LiteralUnion<'md5' | 'sha1' | 'sha256' | 'sha512', strin
 
 export interface Options {
 	/**
-	Encoding of the returned hash.
+	The encoding of the returned hash.
 
 	@default 'hex'
 	*/
@@ -27,6 +27,8 @@ export interface BufferOptions extends Options {
 
 /**
 Get the hash of an object.
+
+The output is deterministic for repeated runs on the same Node.js / browser version. It should also be fairly deterministic across JavaScript engines. However, because the stability of grapheme clusters across Unicode versions is not guaranteed, determinism cannot be guaranteed across JavaScript engines and versions. There are also other factors that can make it nondeterministic, like values with floating point numbers and dates.
 
 @example
 ```

@@ -4,8 +4,8 @@
 
 ## Install
 
-```
-$ npm install hash-obj
+```sh
+npm install hash-obj
 ```
 
 ## Usage
@@ -21,6 +21,8 @@ hashObject({'🦄': '🌈'}, {algorithm: 'sha1'});
 
 ### hashObject(object, options?)
 
+The output is deterministic for repeated runs on the same Node.js / browser version. It should also be fairly deterministic across JavaScript engines. However, because the stability of grapheme clusters across Unicode versions is not guaranteed, determinism cannot be guaranteed across JavaScript engines and versions. There are also other factors that can make it nondeterministic, like values with floating point numbers and dates.
+
 #### object
 
 Type: `object`
@@ -34,13 +36,13 @@ Type: `object`
 Type: `'hex' | 'base64' | 'buffer' | 'latin1'`\
 Default: `'hex'`
 
-Encoding of the returned hash.
+The encoding of the returned hash.
 
 ##### algorithm
 
 Type: `string`\
 Default: `'sha512'`\
-Values: `'md5'` `'sha1'` `'sha256'` `'sha512'` etc *([Platform dependent](https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm))*
+Values: `'md5' | 'sha1' | 'sha256' | 'sha512' | …` *([Platform dependent](https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm))*
 
 *Don't use `'md5'` or `'sha1'` for anything sensitive. [They're insecure.](http://googleonlinesecurity.blogspot.no/2014/09/gradually-sunsetting-sha-1.html)*
 
