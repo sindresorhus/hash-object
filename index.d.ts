@@ -1,4 +1,3 @@
-/* eslint-disable import/export */
 import {Encoding as CryptoEncoding} from 'crypto';
 import {LiteralUnion} from 'type-fest';
 
