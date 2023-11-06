@@ -1,6 +1,6 @@
 {
 	"name": "hash-object",
-	"version": "4.0.0",
+	"version": "5.0.0",
 	"description": "Get the hash of an object",
 	"license": "MIT",
 	"repository": "sindresorhus/hash-object",
