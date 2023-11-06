@@ -1,10 +1,10 @@
-import {Encoding as CryptoEncoding} from 'crypto';
-import {LiteralUnion} from 'type-fest';
+import {type Encoding as CryptoEncoding} from 'node:crypto';
+import {type LiteralUnion} from 'type-fest';
 
 export type Encoding = CryptoEncoding | 'buffer';
 export type Algorithm = LiteralUnion<'md5' | 'sha1' | 'sha256' | 'sha512', string>;
 
-export interface Options {
+export type Options = {
 	/**
 	The encoding of the returned hash.
 
@@ -18,11 +18,11 @@ export interface Options {
 	@default 'sha512'
 	*/
 	readonly algorithm?: Algorithm;
-}
+};
 
-export interface BufferOptions extends Options {
+export type BufferOptions = {
 	readonly encoding: 'buffer';
-}
+} & Options;
 
 /**
 Get the hash of an object.
@@ -40,7 +40,7 @@ hashObject({'🦄': '🌈'}, {algorithm: 'sha1'});
 export default function hashObject(
 	object: Record<string, any>,
 	options: BufferOptions
-): Buffer;
+): Uint8Array;
 export default function hashObject(
 	object: Record<string, any>,
 	options?: Options

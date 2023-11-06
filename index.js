@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import crypto from 'node:crypto';
 import isObject from 'is-obj';
 import sortKeys from 'sort-keys';
 
@@ -11,9 +11,9 @@ function normalizeObject(object) {
 		return object.map(element => normalizeObject(element));
 	}
 
-	if (object !== null && typeof object === 'object') {
+	if (isObject(object)) {
 		return Object.fromEntries(
-			Object.entries(object).map(([key, value]) => [key.normalize('NFD'), normalizeObject(value)])
+			Object.entries(object).map(([key, value]) => [key.normalize('NFD'), normalizeObject(value)]),
 		);
 	}
 
@@ -31,8 +31,10 @@ export default function hashObject(object, {encoding = 'hex', algorithm = 'sha51
 
 	const normalizedObject = normalizeObject(object);
 
-	return crypto
+	const hash = crypto
 		.createHash(algorithm)
 		.update(JSON.stringify(sortKeys(normalizedObject, {deep: true})), 'utf8')
 		.digest(encoding);
+
+	return encoding === undefined ? new Uint8Array(hash) : hash;
 }
