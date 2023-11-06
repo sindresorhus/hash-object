@@ -31,7 +31,7 @@ The output is deterministic for repeated runs on the same Node.js / browser vers
 
 @example
 ```
-import hashObject from 'hash-obj';
+import hashObject from 'hash-object';
 
 hashObject({'🦄': '🌈'}, {algorithm: 'sha1'});
 //=> '3de3bc784035b559784fc276f47493d60555fba3'

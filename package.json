@@ -1,9 +1,9 @@
 {
-	"name": "hash-obj",
+	"name": "hash-object",
 	"version": "4.0.0",
 	"description": "Get the hash of an object",
 	"license": "MIT",
-	"repository": "sindresorhus/hash-obj",
+	"repository": "sindresorhus/hash-object",
 	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
