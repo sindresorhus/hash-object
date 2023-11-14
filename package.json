@@ -44,6 +44,7 @@
 		"checksum"
 	],
 	"dependencies": {
+		"decircular": "^0.1.0",
 		"is-obj": "^3.0.0",
 		"sort-keys": "^5.0.0",
 		"type-fest": "^4.6.0"

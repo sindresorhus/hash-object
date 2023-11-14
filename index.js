@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
 import isObject from 'is-obj';
 import sortKeys from 'sort-keys';
+import decircular from 'decircular';
 
 function normalizeObject(object) {
 	if (typeof object === 'string') {
@@ -29,7 +30,7 @@ export default function hashObject(object, {encoding = 'hex', algorithm = 'sha51
 		encoding = undefined;
 	}
 
-	const normalizedObject = normalizeObject(object);
+	const normalizedObject = normalizeObject(decircular(object));
 
 	const hash = crypto
 		.createHash(algorithm)
