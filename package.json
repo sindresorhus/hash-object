@@ -12,8 +12,14 @@
 	},
 	"type": "module",
 	"exports": {
-		"types": "./index.d.ts",
-		"default": "./index.js"
+		".": {
+			"types": "./index.d.ts",
+			"default": "./index.js"
+		},
+		"./async": {
+			"types": "./async.d.ts",
+			"default": "./async.js"
+		}
 	},
 	"sideEffects": false,
 	"engines": {
@@ -24,7 +30,10 @@
 	},
 	"files": [
 		"index.js",
-		"index.d.ts"
+		"index.d.ts",
+		"async.js",
+		"async.d.ts",
+		"utilities.js"
 	],
 	"keywords": [
 		"hash",

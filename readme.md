@@ -17,6 +17,18 @@ hashObject({'🦄': '🌈'}, {algorithm: 'sha1'});
 //=> '3de3bc784035b559784fc276f47493d60555fba3'
 ```
 
+An async version that uses the Web Crypto API is also available. This works in browsers, edge runtimes, and Node.js 20+:
+
+```js
+import hashObject from 'hash-object/async';
+
+await hashObject({'🦄': '🌈'}, {algorithm: 'sha1'});
+//=> '3de3bc784035b559784fc276f47493d60555fba3'
+```
+
+> [!NOTE]
+> The async version only supports `sha1`, `sha256`, `sha384`, `sha512` algorithms and `hex`, `base64`, `buffer` encodings.
+
 ## API
 
 ### hashObject(object, options?)
@@ -43,6 +55,8 @@ The encoding of the returned hash.
 Type: `string`\
 Default: `'sha512'`\
 Values: `'md5' | 'sha1' | 'sha256' | 'sha512' | …` *([Platform dependent](https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm))*
+
+The async version only supports `'sha1'`, `'sha256'`, `'sha384'`, and `'sha512'`.
 
 *Don't use `'md5'` or `'sha1'` for anything sensitive. [They're insecure.](http://googleonlinesecurity.blogspot.no/2014/09/gradually-sunsetting-sha-1.html)*
 
